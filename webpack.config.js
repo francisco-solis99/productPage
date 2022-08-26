@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rulesForCss = {
-  test: /\.scss$/i,
-  use: ["style-loader", "css-loader","sass-loader"],
-};
+  test: /\.s[ac]ss$/i,
+  exclude: /node_modules/,
+  use: ["style-loader", "css-loader", "sass-loader"]
+}
 
 const rulesForFiles = {
   test: /\.(png|svg|jpg|jpeg|gif)$/i,

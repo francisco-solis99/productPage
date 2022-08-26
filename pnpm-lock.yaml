@@ -7,6 +7,7 @@ specifiers:
   css-loader: ^6.7.1
   html-loader: ^4.1.0
   html-webpack-plugin: ^5.5.0
+  sass: ^1.54.5
   sass-loader: ^13.0.2
   style-loader: ^3.3.1
   webpack: ^5.74.0
@@ -20,7 +21,8 @@ devDependencies:
   css-loader: 6.7.1_webpack@5.74.0
   html-loader: 4.1.0_webpack@5.74.0
   html-webpack-plugin: 5.5.0_webpack@5.74.0
-  sass-loader: 13.0.2_webpack@5.74.0
+  sass: 1.54.5
+  sass-loader: 13.0.2_sass@1.54.5+webpack@5.74.0
   style-loader: 3.3.1_webpack@5.74.0
   webpack: 5.74.0_webpack-cli@4.10.0
   webpack-cli: 4.10.0_r5zkyi3k4cwcnn76n4wwxu6434
@@ -2548,6 +2550,10 @@ packages:
       postcss: 8.4.16
     dev: true
 
+  /immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
+    dev: true
+
   /import-local/3.1.0:
     resolution: {integrity: sha512-ASB07uLtnDs1o6EHjKpX34BKYDSqnFerfTOJL2HvMqF70LnxpjkzDB8J44oT9pu4AMPkQwf8jl6szgvNd2tRIg==}
     engines: {node: '>=8'}
@@ -3306,7 +3312,7 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass-loader/13.0.2_webpack@5.74.0:
+  /sass-loader/13.0.2_sass@1.54.5+webpack@5.74.0:
     resolution: {integrity: sha512-BbiqbVmbfJaWVeOOAu2o7DhYWtcNmTfvroVgFXa6k2hHheMxNAeDHLNoDy/Q5aoaVlz0LH+MbMktKwm9vN/j8Q==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -3327,7 +3333,18 @@ packages:
     dependencies:
       klona: 2.0.5
       neo-async: 2.6.2
+      sass: 1.54.5
       webpack: 5.74.0_webpack-cli@4.10.0
+    dev: true
+
+  /sass/1.54.5:
+    resolution: {integrity: sha512-p7DTOzxkUPa/63FU0R3KApkRHwcVZYC0PLnLm5iyZACyp15qSi32x7zVUhRdABAATmkALqgGrjCJAcWvobmhHw==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.1.0
+      source-map-js: 1.0.2
     dev: true
 
   /schema-utils/2.7.1:
