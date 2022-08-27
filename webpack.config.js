@@ -1,10 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const devMode = process.env.NODE_ENV !== "production";
 
 const rulesForCss = {
-  test: /\.s[ac]ss$/i,
+  test: /\.(s[ac]|c)ss$/i,
   exclude: /node_modules/,
-  use: ["style-loader", "css-loader", "sass-loader"]
+  use: [devMode ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
 }
 
 const rulesForFiles = {
@@ -56,6 +59,9 @@ module.exports = {
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
     })
   ],
   devServer: {
