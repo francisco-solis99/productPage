@@ -2,12 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const devMode = process.env.NODE_ENV !== "production";
 
 const rulesForCss = {
   test: /\.(s[ac]|c)ss$/i,
   exclude: /node_modules/,
-  use: [devMode ? "style-loader" : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+  use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
 }
 
 const rulesForFiles = {
