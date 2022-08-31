@@ -7,19 +7,20 @@
   <title>Product</title>
 </head>
 <body>
+  <div class="overlay"></div>
   <header class="header">
-    <div class="container">
-      <button aria-label="open navigation">
+    <div class="container row">
+      <button aria-label="open navigation" class="nav__btn nav__btn--open">
         <img src="./assets/images/icon-menu.svg" alt="Menu icon">
       </button>
       <a href="/" class="logo">
         <figure class="logo__wrapper">
-          <img src="./assets/images/logo.svg" alt="Sneakers logo image" class="logo__img">
+          <img src="./assets/images/logo.svg" alt="Sneakers logo image" class="img logo__img">
         </figure>
       </a>
       <nav class="nav">
-        <ul class="nav__list nav__list--primary">
-          <button class="nav__close-btn" aria-label="close navigation">
+        <ul class="nav__list nav__list--primary row">
+          <button class="nav__btn nav__btn--close" aria-label="close navigation">
             <img src="./assets/images/icon-close.svg" alt="Close icon">
           </button>
           <li class="nav__item"><a href="/">Collections</a></li>
@@ -28,15 +29,15 @@
           <li class="nav__item"><a href="/">About</a></li>
           <li class="nav__item"><a href="/">Contact</a></li>
         </ul>
-        <ul class="nav__list nav__list--secundary">
+        <ul class="nav__list nav__list--secondary row">
           <li class="nav__item">
-            <button class="nav__item-cart">
-              <img src="./assets/images/icon-cart.svg" alt="Cart image">
+            <button class="nav__btn nav__btn--cart">
+              <img src="./assets/images/icon-cart.svg" alt="Cart image" >
             </button>
           </li>
           <li class="nav__item">
             <a href="/" class="nav__item-avatar">
-              <img src="./assets/images/image-avatar.png" alt="Avatar image">
+              <img src="./assets/images/image-avatar.png" alt="Avatar image" class="img nav__item">
             </a>
           </li>
         </ul>
