@@ -81,6 +81,14 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
 
       @include utilities.breakpoint(medium) {
         display: flex;
+
+        & .nav__item {
+
+          &:hover,
+          &:active {
+            border-bottom: 3px solid var(--color-primary);
+          }
+        }
       }
     }
 
@@ -119,11 +127,6 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
       align-items: center;
       border-bottom: 3px solid transparent;
       transition: all ease-in 200ms;
-
-      &:hover,
-      &:active {
-        border-bottom: 3px solid var(--color-primary);
-      }
     }
   }
 
@@ -165,10 +168,12 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
 }
 
 
-// Slider
+// 1
 .slider {
   overflow: hidden;
   min-width: 300px;
+  position: relative;
+
 
   @include utilities.breakpoint(medium) {
     width: 32%;
@@ -179,7 +184,8 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
     display: flex;
     flex-wrap: nowrap;
     max-height: 550px;
-    position: relative;
+    transition: all ease-in-out 250ms;
+
 
     @include utilities.breakpoint(medium) {
       max-width: 500px;
@@ -236,7 +242,23 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
   }
 
   & .slider__thumb-item {
+    border-radius: .75em;
+    border: 2px solid transparent;
     cursor: pointer;
+
+
+
+    & img {
+      pointer-events: none;
+    }
+
+    &.active {
+      border: 2px solid var(--color-primary);
+    }
+
+    &.active img {
+      filter: opacity(50%);
+    }
   }
 
   & .slider__thumb-item+.slider__thumb-item {
@@ -302,27 +324,8 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
   }
 }
 
-
+// Btns
 .description__buttons {
   display: flex;
   flex-direction: column;
-
-  & .btn {
-    padding: .75em;
-    border: 0;
-    border-radius: .45em;
-    font-weight: 700;
-    color: var(--text-color);
-    cursor: pointer;
-
-    &__primary {
-      margin-top: 1em;
-      color: var(--background-color);
-      background-color: var(--color-primary);
-    }
-
-    &__secundary {
-      background-color: var(--color-light-grayish-blue);
-    }
-  }
 }

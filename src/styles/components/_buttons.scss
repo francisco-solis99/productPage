@@ -1,18 +1,36 @@
-// .btn {
-//   padding: .75em;
-//   border: 0;
-//   border-radius: .45em;
-//   font-weight: 700;
-//   color: var(--text-color);
-//   cursor: pointer;
+.btn {
+  padding: .75em;
+  border: 0;
+  border-radius: .45em;
+  font-weight: 700;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 
-//   &__primary {
-//     margin-top: 1em;
-//     color: var(--background-color);
-//     background-color: var(--color-primary);
-//   }
+  &__primary {
+    justify-content: center;
+    margin-top: 1em;
+    color: var(--background-color);
+    background-color: var(--color-primary);
 
-//   &__secundary {
-//     background-color: var(--color-light-grayish-blue);
-//   }
-// }
+    & span {
+      margin-left: 1em;
+    }
+
+    & svg path {
+      fill: white;
+    }
+  }
+
+  &__secundary {
+    cursor: initial;
+    justify-content: space-between;
+    background-color: var(--color-light-grayish-blue);
+
+    & div {
+      display: inline-flex;
+      cursor: pointer;
+    }
+  }
+}
