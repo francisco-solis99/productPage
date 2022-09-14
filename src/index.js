@@ -73,10 +73,15 @@ function handlerThumbnail(e) {
 const shoppingCartProducts = [];
 const cartItemsContainer = document.querySelector('.cart__items');
 const btnAddToCart = document.querySelector('#btn-add-to-cart');
+const itemsCartElement = document.querySelector('.cart__num-products');
 btnAddToCart.addEventListener('click', handlerAddToCart);
+
 
 const timesElement = document.querySelector('#product-num-items');
 let numTimes = Number(timesElement.textContent);
+
+
+// Control cart shoping
 const btnShoppingCartPlus = document.querySelector('#btn-plus');
 const btnShoppingCartMinus = document.querySelector('#btn-minus');
 
@@ -94,6 +99,7 @@ btnShoppingCartPlus.addEventListener('click', () => {
 
 function handlerAddToCart() {
   // Static product object
+
   const product = {
     id: crypto.randomUUID(),
     name: 'Fall Limited Edition Sneakers',
@@ -102,6 +108,8 @@ function handlerAddToCart() {
   }
 
   shoppingCartProducts.push(product);
+  itemsCartElement.classList.add('active');
+  itemsCartElement.textContent = shoppingCartProducts.length;
   renderProductIntoCart(product, numTimes);
 }
 
@@ -155,7 +163,7 @@ function removeProductFromCart() {
   const indexCartItem = shoppingCartProducts.findIndex(item => item.id === cartItem.dataset.idProduct);
   cartItem.remove();
   shoppingCartProducts.splice(indexCartItem, 1);
-
+  itemsCartElement.textContent = shoppingCartProducts.length;
   if (!shoppingCartProducts.length) renderDeaultMessageCart();
 }
 
@@ -164,5 +172,6 @@ function renderDeaultMessageCart() {
   const defaultMessage = document.createElement('p');
   defaultMessage.textContent = 'Your car is empty';
   cartItemsContainer.classList.remove('no-empty');
+  itemsCartElement.classList.remove('active');
   cartItemsContainer.append(defaultMessage);
 }

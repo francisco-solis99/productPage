@@ -82,6 +82,7 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
       @include utilities.breakpoint(medium) {
         display: flex;
 
+
         & .nav__item {
 
           &:hover,
@@ -115,6 +116,37 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
 
         @include utilities.breakpoint(medium) {
           margin-left: 1.5em;
+        }
+      }
+
+      // Avatar
+      & .nav__item-avatar img {
+        border-radius: 8em;
+        border: 2px solid transparent;
+      }
+
+      & .nav__item-avatar:hover img {
+        border: 2px solid var(--color-primary);
+      }
+
+      // Items cart
+      & .nav__btn--cart {
+        position: relative;
+
+        & .cart__num-products {
+          position: absolute;
+          top: -1em;
+          padding: 0 .5em;
+          font-size: .75rem;
+          border-radius: 5em;
+          color: var(--background-color);
+          background-color: var(--color-primary);
+          display: none;
+          transition: all 250ms ease-in;
+
+          &.active {
+            display: initial;
+          }
         }
       }
     }
@@ -425,4 +457,19 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
 .description__buttons {
   display: flex;
   flex-direction: column;
+
+  @include utilities.breakpoint(medium) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & .btn:nth-child(1) {
+      width: 30%;
+    }
+
+    & .btn:nth-child(2) {
+      width: 60%;
+      margin: 0;
+    }
+  }
 }
