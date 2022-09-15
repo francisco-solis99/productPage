@@ -3,11 +3,6 @@
 @use "components";
 
 
-$VeryDarkBlue: hsl(220, 13%, 13%);
-$DarkGrayishBlue: hsl(219, 9%, 45%);
-$GrayishBlue: hsl(220, 14%, 75%);
-$LightGrayishBlue: hsl(223, 64%, 98%);
-
 // HEADER
 .header {
   padding-top: 1em;
@@ -15,7 +10,7 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
   color: var(--text-color);
 
   & .container {
-    border-bottom: 1px solid $GrayishBlue;
+    border-bottom: 1px solid var(--color-grayish-blue);
   }
 }
 
