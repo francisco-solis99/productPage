@@ -1,4 +1,5 @@
 import './styles/styles.scss';
+import Slider from './Slider.js';
 import removeIcon from './assets/images/icon-delete.svg';
 
 // Menu btns
@@ -29,43 +30,18 @@ function toggleCartShopping() {
 
 
 // Slider
-let indexSlides = 0;
-const [btnSliderPrev, btnSliderNext] = document.querySelectorAll('.slider__control')
-const slider = document.querySelector('.slider__container');
-const numSlides = document.querySelectorAll('.slider__item').length;
-const thumbnailWrapper = document.querySelector('.slider__thubmbails');
-
-
-btnSliderNext.addEventListener('click', () => {
-  indexSlides += 1;
-  handlerSlider();
+const slider = new Slider({
+  numSlides: document.querySelectorAll('.slider__item').length,
+  sliderElement: document.querySelector('.slider__container'),
+  btnSliderPrev: document.querySelector('.slider__control--prev'),
+  btnSliderNext: document.querySelector('.slider__control--next'),
 });
 
-btnSliderPrev.addEventListener('click', () => {
-  indexSlides -= 1;
-  handlerSlider();
+slider.init();
+slider.initThumbnails({
+  containerThumbnail: document.querySelector('.slider__thubmbails'),
+  thumbnailItem: document.querySelector('.slider__thumb-item')
 });
-
-
-function handlerSlider() {
-  if (indexSlides < 0) indexSlides = numSlides - 1;
-  if (indexSlides > numSlides - 1) indexSlides = 0;
-  slider.style.transform = `translate(-${100 * indexSlides}%)`;
-}
-
-
-// Thumbnails preview
-thumbnailWrapper.addEventListener('click', (e) => handlerThumbnail(e))
-let previousThumbnail = document.querySelector('.slider__thumb-item');
-function handlerThumbnail(e) {
-  if (!e.target.classList.contains('slider__thumb-item')) return;
-
-  indexSlides = e.target.dataset.thumbIndex;
-  previousThumbnail?.classList.remove('active');
-  e.target.classList.add('active');
-  previousThumbnail = e.target;
-  handlerSlider();
-}
 
 
 
