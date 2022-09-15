@@ -56,132 +56,6 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
   }
 }
 
-// Maybe this could be a component
-.nav {
-  min-height: 4rem;
-  margin-left: auto;
-  display: flex;
-
-
-  @include utilities.breakpoint(medium) {
-    margin: 0;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    &--primary {
-      display: none;
-
-      @include utilities.breakpoint(medium) {
-        display: flex;
-
-
-        & .nav__item {
-
-          &:hover,
-          &:active {
-            border-bottom: 3px solid var(--color-primary);
-          }
-        }
-      }
-    }
-
-    &--primary.active {
-      width: 60%;
-      padding: 1em;
-      display: block;
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--background-color);
-
-      & .nav__item {
-        margin: 1em 0;
-      }
-    }
-
-    &--secondary {
-
-      & .nav__item+.nav__item {
-        margin-left: .75em;
-
-        @include utilities.breakpoint(medium) {
-          margin-left: 1.5em;
-        }
-      }
-
-      // Avatar
-      & .nav__item-avatar img {
-        border-radius: 8em;
-        border: 2px solid transparent;
-      }
-
-      & .nav__item-avatar:hover img {
-        border: 2px solid var(--color-primary);
-      }
-
-      // Items cart
-      & .nav__btn--cart {
-        position: relative;
-
-        & .cart__num-products {
-          position: absolute;
-          top: -1em;
-          padding: 0 .5em;
-          font-size: .75rem;
-          border-radius: 5em;
-          color: var(--background-color);
-          background-color: var(--color-primary);
-          display: none;
-          transition: all 250ms ease-in;
-
-          &.active {
-            display: initial;
-          }
-        }
-      }
-    }
-  }
-
-  &__item {
-    @include utilities.breakpoint(medium) {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      border-bottom: 3px solid transparent;
-      transition: all ease-in 200ms;
-    }
-  }
-
-
-  &__item+&__item {
-
-    @include utilities.breakpoint(medium) {
-      margin-left: 1.5em;
-    }
-  }
-
-  &__item a {
-    font-size: 1rem;
-    font-weight: 600;
-    color: $DarkGrayishBlue;
-    font-family: 'Playfair Display', serif;
-  }
-
-  &__item-avatar img {
-    width: 2rem;
-  }
-}
-
 // Main content
 .hero {
   padding-bottom: 2.25em;
@@ -198,7 +72,6 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
     justify-content: space-between;
   }
 }
-
 
 // Slider
 .slider {
@@ -392,9 +265,6 @@ $LightGrayishBlue: hsl(223, 64%, 98%);
     margin: 0 auto;
   }
 }
-
-
-
 
 // Info product
 .description {
